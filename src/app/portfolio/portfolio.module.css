@@ -1,0 +1,21 @@
+.item {
+  height: 400px;
+  width: 300px;
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.573);
+  background-size: cover !important;
+}
+.items {
+  display: flex;
+  gap: 20px;
+}
+.item2 {
+  background-image: url("/websites.jpg");
+}
+.item1 {
+  background: url("/illustration.png");
+}
+.item3 {
+  background: url("/apps.jpg");
+}
