@@ -1,6 +1,8 @@
 import React from 'react'
+import { config } from 'dotenv'
+config()
 const getData = async (id) => {
-    const res = await fetch("/api/posts/" + id, {
+    const res = await fetch(`${process.env.ORIGIN}/api/posts/${id}`, {
         cache: 'no-store'
     })
     if (!res.ok) {

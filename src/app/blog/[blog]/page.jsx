@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 const getData = async (id) => {
-    const res = await fetch("/api/posts/" + id, {
+    const res = await fetch(`http://localhost:4000/api/posts/${id}`, {
+        method: "GET",
         cache: 'no-store'
     })
     if (!res.ok) {
@@ -15,7 +16,6 @@ const SingleBLog = ({ params }) => {
     const [data, setData] = useState({})
     useEffect(() => {
         const fetch = async () => {
-
             setData(await getData(params.blog))
         }
         fetch()
