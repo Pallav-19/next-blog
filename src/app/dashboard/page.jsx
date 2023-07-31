@@ -54,18 +54,19 @@ const Dashboard = () => {
         return (
             <div className='flex gap-12 w-full h-full' >
                 <div className='flex flex-col justify-start gap-6 w-1/2 max-h-screen overflow-y-scroll no-scrollbar'>
+                    <p className='text-7xl font-bold mb-4 text-emerald-300'>Your Blogs</p>
                     {data.length ? data.map(c => {
 
                         return (
                             <>
 
                                 <div key={c._id} className={`flex gap-12 justify-end  mb-8 flex-row-reverse w-full`}>
-                                    <div className='flex  gap-4 flex-col w-1/2 h-56 '>
+                                    <div className='flex  gap-4 flex-col w-1/2  '>
                                         <h1 className='font-bold text-2xl'>{c?.title} </h1>
-                                        <p className='text-md text-emerald-500'>{new Date(c?.createdAt).toDateString()}{" / "}{new Date(c?.createdAt).toLocaleTimeString()}</p>
+                                        <p className='text-md text-emerald-400'>{new Date(c?.createdAt).toDateString()}{" / "}{new Date(c?.createdAt).toLocaleTimeString()}</p>
                                         <RiDeleteBin5Fill onClick={() => { handleDelete(c._id) }} fontSize={28} className='text-red-500 mt-auto cursor-pointer' />
                                     </div>
-                                    <div className='flex  relative h-56 w-1/2'>
+                                    <div className='flex  relative  w-1/2'>
                                         <Image src={c?.image} alt='img' fill className='object-cover' />
                                     </div>
                                 </div>
